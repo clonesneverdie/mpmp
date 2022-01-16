@@ -14,6 +14,8 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-static": "^1.0.0-next.26",
     "@sveltejs/kit": "next",
@@ -26,8 +28,10 @@
     "gh-pages": "^3.2.3",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
+    "sass": "^1.48.0",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.6",
+    "svelte-fa": "^2.4.0",
     "svelte-preprocess": "^4.9.4",
     "tslib": "^2.3.1",
     "typescript": "^4.4.3"

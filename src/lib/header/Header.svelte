@@ -1,124 +1,88 @@
 <script lang="ts">
-  import { page } from '$app/stores'
-  import logo from './svelte-logo.svg'
+  // import { page } from '$app/stores'
+  import Fa from 'svelte-fa'
+  import { faBars } from '@fortawesome/free-solid-svg-icons'
 </script>
 
 <header>
-  <div class="corner">
-    <a href="https://kit.svelte.dev">
-      <img src="{logo}" alt="SvelteKit" />
-    </a>
+  <div class="logo-wrap">
+    <div>MPMP</div>
   </div>
-
-  <nav>
-    <svg viewBox="0 0 2 3" aria-hidden="true">
-      <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z"></path>
-    </svg>
-    <ul>
-      <li class:active="{$page.url.pathname === '/'}"><a sveltekit:prefetch href="/">Home</a></li>
-      <li class:active="{$page.url.pathname === '/about'}">
-        <a sveltekit:prefetch href="/about">About</a>
-      </li>
-      <li class:active="{$page.url.pathname === '/todos'}">
-        <a sveltekit:prefetch href="/todos">Todos</a>
-      </li>
-    </ul>
-    <svg viewBox="0 0 2 3" aria-hidden="true">
-      <path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z"></path>
-    </svg>
-  </nav>
-
-  <div class="corner">
-    <!-- TODO put something else here? github link? -->
+  <div class="menu-wrap">
+    <div class="wallet-btn">Wallet Connect</div>
+    <div class="nav-icon">
+      <Fa icon="{faBars}" color="#E3DAE7" />
+    </div>
   </div>
 </header>
 
-<style>
+<style lang="scss">
   header {
     display: flex;
     justify-content: space-between;
-  }
-
-  .corner {
-    width: 3em;
-    height: 3em;
-  }
-
-  .corner a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .corner img {
-    width: 2em;
-    height: 2em;
-    object-fit: contain;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    --background: rgba(255, 255, 255, 0.7);
-  }
-
-  svg {
-    width: 2em;
-    height: 3em;
-    display: block;
-  }
-
-  path {
-    fill: var(--background);
-  }
-
-  ul {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    height: 3em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    background: var(--background);
-    background-size: contain;
-  }
-
-  li {
-    position: relative;
-    height: 100%;
-  }
-
-  li.active::before {
-    --size: 6px;
-    content: '';
-    width: 0;
-    height: 0;
-    position: absolute;
+    background-color: $primary-color;
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
     top: 0;
-    left: calc(50% - var(--size));
-    border: var(--size) solid transparent;
-    border-top: var(--size) solid var(--accent-color);
+    left: 0;
+    right: 0;
   }
 
-  nav a {
+  .logo-wrap {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: $base-color;
+  }
+
+  .menu-wrap {
     display: flex;
-    height: 100%;
-    align-items: center;
-    padding: 0 1em;
-    color: var(--heading-color);
-    font-weight: 700;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    transition: color 0.2s linear;
+    width: 200px;
+    justify-content: space-between;
   }
 
-  a:hover {
-    color: var(--accent-color);
+  .nav-icon {
+    cursor: pointer;
+    height: 100%;
+    font-size: 1.7rem;
+  }
+
+  .wallet-btn {
+    background-color: $base-color;
+    color: $primary-color;
+    padding: 5px 20px 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .wallet-btn:active {
+    background-color: $base-color;
+    color: $primary-color;
+    padding: 5px 20px 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 768px) {
+    .menu-wrap {
+      display: flex;
+      width: auto;
+      justify-content: space-between;
+    }
+    .wallet-btn {
+      display: none;
+    }
   }
 </style>
