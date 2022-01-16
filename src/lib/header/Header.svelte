@@ -1,7 +1,9 @@
 <script lang="ts">
-  // import { page } from '$app/stores'
-  import Fa from 'svelte-fa'
+  // import { nav } from '$app/stores'
+  import { navMenu, navSet } from '$stores/index'
   import { faBars } from '@fortawesome/free-solid-svg-icons'
+  import { onMount } from 'svelte'
+  import Fa from 'svelte-fa'
 </script>
 
 <header>
@@ -9,8 +11,13 @@
     <div>MPMP</div>
   </div>
   <div class="menu-wrap">
-    <div class="wallet-btn">Wallet Connect</div>
-    <div class="nav-icon">
+    <div class="wallet-btn" on:click="{navSet}">Wallet Connect</div>
+    <div
+      class="nav-icon"
+      on:click="{() => {
+        $navMenu = !$navMenu
+      }}"
+    >
       <Fa icon="{faBars}" color="#E3DAE7" />
     </div>
   </div>
