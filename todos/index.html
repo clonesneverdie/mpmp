@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="description" content="Svelte demo app" />
-		<link rel="icon" href="./favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Todos</title>
-	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-aedf2c3e.css">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Svelte demo app" />
+	<meta name="theme-color" content="#848CCF">
+	<link rel="icon" href="./favicon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Todos</title>
+	<link rel="stylesheet" href="/_app/assets/vendor-ec9510ad.css">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-720609f9.css">
 	<link rel="stylesheet" href="/_app/assets/pages/todos/index.svelte-784042c1.css">
-	<link rel="modulepreload" href="/_app/start-9b544258.js">
-	<link rel="modulepreload" href="/_app/chunks/vendor-ee294e9e.js">
-	<link rel="modulepreload" href="/_app/pages/__layout.svelte-85a249b1.js">
-	<link rel="modulepreload" href="/_app/pages/todos/index.svelte-3111d3ec.js">
+	<link rel="modulepreload" href="/_app/start-8f12fd44.js">
+	<link rel="modulepreload" href="/_app/chunks/vendor-6275e967.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-56cade6c.js">
+	<link rel="modulepreload" href="/_app/pages/todos/index.svelte-7f145167.js">
 			<script type="module">
-				import { start } from "/_app/start-9b544258.js";
+				import { start } from "/_app/start-8f12fd44.js";
 				start({
 					target: document.querySelector("#svelte"),
 					paths: {"base":"","assets":""},
@@ -25,42 +28,40 @@
 						status: 200,
 						error: null,
 						nodes: [
-							import("/_app/pages/__layout.svelte-85a249b1.js"),
-						import("/_app/pages/todos/index.svelte-3111d3ec.js")
+							import("/_app/pages/__layout.svelte-56cade6c.js"),
+						import("/_app/pages/todos/index.svelte-7f145167.js")
 						],
 						url: new URL("http://prerender/todos"),
 						params: {}
 					}
 				});
 			</script>
-	</head>
-	<body>
-		<div id="svelte">
+</head>
+
+<body>
+	<div id="svelte">
 
 
-<header class="svelte-1w6zozv"><div class="corner svelte-1w6zozv"><a href="https://kit.svelte.dev" class="svelte-1w6zozv"><img src="/_app/assets/svelte-logo-87df40b8.svg" alt="SvelteKit" class="svelte-1w6zozv"></a></div>
-
-  <nav class="svelte-1w6zozv"><svg viewBox="0 0 2 3" aria-hidden="true" class="svelte-1w6zozv"><path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" class="svelte-1w6zozv"></path></svg>
-    <ul class="svelte-1w6zozv"><li class="svelte-1w6zozv"><a sveltekit:prefetch href="/" class="svelte-1w6zozv">Home</a></li>
-      <li class="svelte-1w6zozv"><a sveltekit:prefetch href="/about" class="svelte-1w6zozv">About</a></li>
-      <li class="svelte-1w6zozv active"><a sveltekit:prefetch href="/todos" class="svelte-1w6zozv">Todos</a></li></ul>
-    <svg viewBox="0 0 2 3" aria-hidden="true" class="svelte-1w6zozv"><path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" class="svelte-1w6zozv"></path></svg></nav>
-
-  <div class="corner svelte-1w6zozv"></div>
+<header class="svelte-1306yfk"><div class="logo-wrap svelte-1306yfk"><div>MPMP</div></div>
+  <div class="menu-wrap svelte-1306yfk"><div class="wallet-btn svelte-1306yfk">Wallet Connect</div>
+    <div class="nav-icon svelte-1306yfk"><svg id="" class="svelte-fa svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 448 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(224 256)" transform-origin="112 0"><g transform="translate(0,0) scale(1,1)"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" fill="#E3DAE7" transform="translate(-224 -256)"></path></g></g></svg></div></div>
 </header>
 
-<main class="svelte-1nw0d5b">
+
+
+<main class="svelte-1adshqw"><div class="wrap svelte-1adshqw">
 
 <div class="todos svelte-dmxqmd"><h1>Todos</h1>
 
 	<form class="new svelte-dmxqmd" action="/todos.json" method="post"><input name="text" aria-label="Add todo" placeholder="+ tap to add a todo" class="svelte-dmxqmd"></form>
 
 	
-</div></main>
+</div></div></main>
 
-<footer class="svelte-1nw0d5b"><p>visit <a href="https://kit.svelte.dev" class="svelte-1nw0d5b">kit.svelte.dev</a> to learn SvelteKit</p>
+<footer class="svelte-1ikeeje"><div class="content-wrap">Footer</div>
 </footer>
 
 <script type="application/json" data-type="svelte-data" data-url="/todos.json">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"[]"}</script></div>
-	</body>
+</body>
+
 </html>
