@@ -3,24 +3,8 @@
   import { navMenu, navSet } from '$stores/index'
   import { faBars } from '@fortawesome/free-solid-svg-icons'
   import Fa from 'svelte-fa'
-  // import WalletConnect from 'walletconnect'
-  import NodeWalletConnect from '@walletconnect/node'
-  import WalletConnectQRCodeModal from '@walletconnect/qrcode-modal'
+  import Connect from '$lib/connect/Connect.svelte'
 
-  // const wc = new WalletConnect()
-  const walletConnector = new NodeWalletConnect(
-    {
-      bridge: 'https://bridge.walletconnect.org' // Required
-    },
-    {
-      clientMeta: {
-        description: 'WalletConnect NodeJS Client',
-        url: 'https://nodejs.org/en/',
-        icons: ['https://nodejs.org/static/images/logo.svg'],
-        name: 'WalletConnect'
-      }
-    }
-  )
   async function connect() {}
 </script>
 
@@ -29,7 +13,7 @@
     <div>MPMP</div>
   </div>
   <div class="menu-wrap">
-    <div class="wallet-btn" on:click="{navSet}">Wallet Connect</div>
+    <div class="wallet-btn" on:click="{navSet}"><Connect /></div>
     <div
       class="nav-icon"
       on:click="{() => {

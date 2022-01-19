@@ -56,7 +56,7 @@
   }
   .close {
     display: flex;
-    justify-content: right;
+    justify-content: end;
   }
   .close-btn {
     font-size: 1.7rem;
@@ -98,6 +98,17 @@
     .btn-wrap {
       display: flex;
       justify-content: center;
+    }
+
+    .close {
+      display: flex;
+      justify-content: end;
+    }
+    .close-btn {
+      font-size: 1.7rem;
+      display: flex;
+      padding: 10px;
+      cursor: pointer;
     }
   }
 </style>
