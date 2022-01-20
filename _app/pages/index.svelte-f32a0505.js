@@ -1,1 +1,0 @@
-import{S as o,i as n,s as a,W as r,d as c,H as e}from"../chunks/vendor-eec09583.js";function d(s){return{c(){this.h()},l(t){r('[data-svelte="svelte-n3ior8"]',document.head).forEach(c),this.h()},h(){document.title="Home"},m:e,p:e,i:e,o:e,d:e}}const h=!0;class i extends o{constructor(t){super();n(this,t,null,d,a,{})}}export{i as default,h as prerender};
