@@ -1,22 +1,34 @@
 <script lang="ts">
-  import { ethers } from 'ethers'
   import { onMount } from 'svelte'
+  // import { connected, provider, chainId, chainData, signer, signerAddress } from 'svelte-ethers-store'
+  // import { defaultEvmStores } from 'svelte-ethers-store'
+  // import WalletConnectProvider from '@walletconnect/web3-provider'
+  import Web3Modal from 'web3modal'
+  import { ethers } from 'ethers'
   import { browser } from '$app/env'
-  // import { connected, web3, selectedAccount, chainId, chainData } from 'svelte-web3'
-  // import { defaultEvmStores } from 'svelte-web3'
+
   let ethereum: any | undefined
-  onMount(() => {
+  if (browser) {
     ethereum = (window as any).ethereum
-    // defaultEvmStores.setProvider(window.ethereum)
+  }
+  onMount(() => {
+    // defaultEvmStores.setProvider()
   })
 
   async function connect() {
-    if (ethereum === undefined) {
-      alert('There is no Metamask. Please install Metamask.')
-      return false
-    }
-    await addChain()
-    requestAccount()
+    // if (ethereum === undefined) {
+    //   alert('There is no Metamask. Please install Metamask.')
+    //   return false
+    // }
+    const web3Modal = new Web3Modal()
+    const instance = await web3Modal.connect()
+    const provider = new ethers.providers.Web3Provider(instance)
+    const signer = provider.getSigner()
+    let myAddress = await signer.getAddress()
+    console.log(myAddress)
+    // defaultEvmStores.setProvider(provider)
+    // await addChain()
+    // requestAccount()
   }
   async function addChain() {
     // await ethereum.request({

@@ -4,8 +4,6 @@
   import { faBars } from '@fortawesome/free-solid-svg-icons'
   import Fa from 'svelte-fa'
   import Connect from '$lib/connect/Connect.svelte'
-
-  async function connect() {}
 </script>
 
 <header>

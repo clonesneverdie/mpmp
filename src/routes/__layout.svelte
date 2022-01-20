@@ -2,7 +2,7 @@
   import Header from '$lib/header/Header.svelte'
   import Footer from '$lib/footer/Footer.svelte'
   import Nav from '$lib/nav/Navigation.svelte'
-  import '../global.css'
+  import '../globalcss.css'
 </script>
 
 <Header />
