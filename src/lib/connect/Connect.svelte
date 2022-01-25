@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { browser } from '$app/env'
   import { myAddress, isConnect, signer } from '$stores/chain'
   import { connect, disconnect, connectState, addChain, testTransaction, getAddress } from '$lib/wallet/Wallet.svelte'
   import PaxABI from '$abi/Pax.json'
