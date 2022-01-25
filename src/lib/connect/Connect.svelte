@@ -1,56 +1,37 @@
 <script lang="ts">
-  import { myAddress, isConnect } from '$stores/chain'
-  // import { onMount } from 'svelte'
-  // import { ethers } from 'ethers'
-  import { connect, disconnect } from '$lib/wallet/wallet.svelte'
-  // onMount(async () => {
-  //   connect()
-  // })
+  import { onMount } from 'svelte'
+  import { browser } from '$app/env'
+  import { myAddress, isConnect, signer } from '$stores/chain'
+  import { connect, disconnect, connectState, addChain, testTransaction, getAddress } from '$lib/wallet/Wallet.svelte'
+  import PaxABI from '$abi/Pax.json'
+  onMount(async () => {
+    let isConnected = await connectState()
+    if (isConnected) {
+      connectWallet()
+    }
+  })
+  let data: string
 
-  async function connectWallet() {
-    $myAddress = await connect()
-    console.log($myAddress)
-    $isConnect = true
+  $: data = data
+
+  async function testNetwork() {
+    const ca = '0x818E6b4bEa1C1FfF712464FE057d4791Efc6D552'
+    data = await testTransaction(ca, PaxABI, $signer, $myAddress)
+    console.log(data)
   }
 
-  async function addChain() {
-    // await ethereum.request({
-    //   method: 'wallet_addEthereumChain',
-    //   params: [
-    //     {
-    //       chainId: '0x4bd',
-    //       chainName: 'Popcateum',
-    //       nativeCurrency: {
-    //         name: 'Popcat',
-    //         symbol: 'POP',
-    //         decimals: 18
-    //       },
-    //       rpcUrls: ['https://dataseed.popcateum.org'],
-    //       blockExplorerUrls: ['https://explorer.popcateum.org']
-    //     }
-    //   ]
-    // })
-    await ethereum.request({
-      method: 'wallet_addEthereumChain',
-      params: [
-        {
-          chainId: '0x89',
-          chainName: 'Polygon Mainnet',
-          nativeCurrency: {
-            name: 'Matic',
-            symbol: 'MATIC',
-            decimals: 18
-          },
-          rpcUrls: ['https://polygon-rpc.com/'],
-          blockExplorerUrls: ['https://polygonscan.com/']
-        }
-      ]
-    })
+  async function connectWallet() {
+    $signer = await connect()
+    $myAddress = await getAddress()
+    await addChain()
+    console.log($myAddress)
+    $isConnect = true
+    testNetwork()
   }
 </script>
 
 {#if $isConnect === true}
-  <div on:click="{disconnect}">{$myAddress}</div>
+  <div on:click="{disconnect}">{data}</div>
 {:else}
   <div on:click="{connectWallet}">Wallet Connect</div>
 {/if}

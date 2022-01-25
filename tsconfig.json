@@ -25,7 +25,8 @@
 		"paths": {
 			"$lib": ["src/lib"],
 			"$lib/*": ["src/lib/*"],
-			"$stores/*": ["src/stores/*"]
+			"$stores/*": ["src/stores/*"],
+			"$abi/*": ["src/abi/*"]
 		}
 	},
 	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]

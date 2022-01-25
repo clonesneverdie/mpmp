@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
+    "start": "node build/index.js",
     "build": "svelte-kit build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
@@ -16,7 +17,10 @@
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@maticnetwork/maticjs": "^3.2.0",
+    "@maticnetwork/walletconnect-provider": "^0.0.1-beta.1",
     "@sveltejs/adapter-auto": "next",
+    "@sveltejs/adapter-node": "^1.0.0-next.67",
     "@sveltejs/adapter-static": "^1.0.0-next.26",
     "@sveltejs/kit": "next",
     "@types/cookie": "^0.4.1",
