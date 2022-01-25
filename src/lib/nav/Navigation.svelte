@@ -2,7 +2,7 @@
   import { navMenu, navSet } from '$stores/index'
   import { fly } from 'svelte/transition'
   import { faTimes } from '@fortawesome/free-solid-svg-icons'
-  import Connect from '$lib/connect/Connect.svelte'
+  // import Connect from '$lib/connect/Connect.svelte'
   import Fa from 'svelte-fa'
 </script>
 
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="btn-wrap">
-      <div class="wallet-btn"><Connect /></div>
+      <div class="wallet-btn">test</div>
     </div>
     <div class="menu">Clone V3</div>
     <div class="menu">Clone Parts</div>

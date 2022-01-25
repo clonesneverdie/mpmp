@@ -3,6 +3,7 @@
   import { myAddress, isConnect, signer } from '$stores/chain'
   import { connect, disconnect, connectState, addChain, testTransaction, getAddress } from '$lib/wallet/Wallet.svelte'
   import PaxABI from '$abi/Pax.json'
+
   onMount(async () => {
     let isConnected = await connectState()
     if (isConnected) {
