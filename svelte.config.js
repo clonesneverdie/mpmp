@@ -1,8 +1,8 @@
-import adapter from '@sveltejs/adapter-auto';
-// import adapter from '@sveltejs/adapter-static';
+// import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 import path from 'path'
-// import inject from '@rollup/plugin-inject'
+// import nodePolyfills from 'rollup-plugin-node-polyfills';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -24,9 +24,10 @@ const config = {
 				global: {},
 			},
 			plugins: [
-				// inject({ Buffer: ['Buffer', 'Buffer'] }),
+				// nodePolyfills({buffer: true})
 			],
       resolve: {
+				browser: true,
         alias: {
           '$stores': path.resolve('./src/stores')
         }
