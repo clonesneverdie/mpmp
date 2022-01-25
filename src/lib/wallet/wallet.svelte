@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  import { browser } from '$app/env'
+  // import { browser } from '$app/env'
   import { ethers } from 'ethers'
   import Web3Modal from 'web3modal'
 
@@ -11,28 +11,28 @@
   let providerOptions: any
   let signer: any
 
-  if (browser) {
-    console.log(browser)
-    ethereum = (window as any).ethereum
-    WalletConnectProvider = window.WalletConnectProvider.default
-    providerOptions = {
-      walletconnect: {
-        package: WalletConnectProvider,
-        options: {
-          rpc: {
-            137: 'https://polygonscan.com/'
-          },
-          network: 'matic'
-          // infuraId: infuraId
-        }
+  // if (browser) {
+  // console.log(browser)
+  ethereum = (window as any).ethereum
+  WalletConnectProvider = window.WalletConnectProvider.default
+  providerOptions = {
+    walletconnect: {
+      package: WalletConnectProvider,
+      options: {
+        rpc: {
+          137: 'https://polygonscan.com/'
+        },
+        network: 'matic'
+        // infuraId: infuraId
       }
     }
-    web3Modal = new Web3Modal({
-      cacheProvider: true,
-      providerOptions,
-      disableInjectedProvider: false
-    })
   }
+  web3Modal = new Web3Modal({
+    cacheProvider: true,
+    providerOptions,
+    disableInjectedProvider: false
+  })
+  // }
 
   export async function getAddress() {
     return await signer.getAddress()

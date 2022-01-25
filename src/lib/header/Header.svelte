@@ -3,7 +3,7 @@
   import { navMenu, navSet } from '$stores/index'
   import { faBars } from '@fortawesome/free-solid-svg-icons'
   import Fa from 'svelte-fa'
-  // import Connect from '$lib/connect/Connect.svelte'
+  import Connect from '$lib/connect/Connect.svelte'
 </script>
 
 <header>
@@ -11,7 +11,7 @@
     <div>MPMP</div>
   </div>
   <div class="menu-wrap">
-    <div class="wallet-btn" on:click="{navSet}">test</div>
+    <div class="wallet-btn" on:click="{navSet}"><Connect /></div>
     <div
       class="nav-icon"
       on:click="{() => {
