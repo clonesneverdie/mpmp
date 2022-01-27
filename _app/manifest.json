@@ -1,10 +1,10 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-966954fc.js",
+    "file": "start-7a6e8d84.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
-      "_vendor-ad2d9906.js"
+      "_vendor-6141a9b9.js"
     ],
     "dynamicImports": [
       "src/routes/__layout.svelte",
@@ -15,68 +15,63 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-2e5bd246.js",
+    "file": "pages/__layout.svelte-66f98434.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-ad2d9906.js",
-      "_env-859c48a7.js"
+      "_vendor-6141a9b9.js"
     ],
     "css": [
       "assets/pages/__layout.svelte-666fece3.css"
     ]
   },
   "src/routes/__error.svelte": {
-    "file": "pages/__error.svelte-18b044b4.js",
+    "file": "pages/__error.svelte-26232826.js",
     "src": "src/routes/__error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-ad2d9906.js"
+      "_vendor-6141a9b9.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-18d11207.js",
+    "file": "pages/index.svelte-b855edc4.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-ad2d9906.js"
+      "_vendor-6141a9b9.js"
     ]
   },
   "src/routes/about.svelte": {
-    "file": "pages/about.svelte-2154cdd1.js",
+    "file": "pages/about.svelte-77f2f3ef.js",
     "src": "src/routes/about.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-ad2d9906.js",
-      "_env-859c48a7.js"
+      "_vendor-6141a9b9.js"
     ],
     "css": [
       "assets/pages/about.svelte-206e1d16.css"
     ]
   },
   "src/routes/todos/index.svelte": {
-    "file": "pages/todos/index.svelte-866799e7.js",
+    "file": "pages/todos/index.svelte-4d7b9db0.js",
     "src": "src/routes/todos/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-ad2d9906.js"
+      "_vendor-6141a9b9.js"
     ],
     "css": [
       "assets/pages/todos/index.svelte-784042c1.css"
     ]
   },
-  "_vendor-ad2d9906.js": {
-    "file": "chunks/vendor-ad2d9906.js",
+  "_vendor-6141a9b9.js": {
+    "file": "chunks/vendor-6141a9b9.js",
     "css": [
       "assets/vendor-ec9510ad.css"
     ]
-  },
-  "_env-859c48a7.js": {
-    "file": "chunks/env-859c48a7.js"
   }
 }
