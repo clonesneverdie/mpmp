@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, afterUpdate, onDestroy } from 'svelte'
+  import { onMount } from 'svelte'
   import { myAddress, isConnect, signer, instance, chainId } from '$stores/chain'
   import {
     getInstance,
@@ -21,6 +21,8 @@
       connectWallet()
     }
   })
+
+  let thisWidth: number
   let data: string
 
   $: data = data
@@ -33,19 +35,20 @@
 
   async function connectWallet() {
     $instance = await getInstance()
-    await addChain()
     $signer = await connect($instance)
     $myAddress = await getAddress()
-    console.log($myAddress)
-    const chainData = await getChainId()
-    $chainId = chainData
+    if (thisWidth > 768) {
+      await addChain()
+    }
+    $chainId = await getChainId()
     $isConnect = true
-    console.log('isconnect', $isConnect)
     testNetwork()
     accountsChanged()
     chainChanged()
   }
 </script>
+
+<svelte:window bind:innerWidth="{thisWidth}" />
 
 {#if $isConnect === true}
   <div on:click="{disconnect}">{data}</div>

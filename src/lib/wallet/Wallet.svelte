@@ -12,7 +12,6 @@
   let signer: any
 
   if (browser) {
-    console.log(browser)
     ethereum = (window as any).ethereum
     WalletConnectProvider = window.WalletConnectProvider.default
     providerOptions = {
@@ -23,7 +22,6 @@
             137: 'https://polygon-rpc.com/'
           },
           network: 'matic'
-          // infuraId: infuraId
         }
       }
     }
@@ -39,7 +37,7 @@
     return instance
   }
 
-  export async function connect(instance) {
+  export async function connect(instance: any) {
     provider = new ethers.providers.Web3Provider(instance, 'any')
     signer = provider.getSigner()
     return signer
@@ -82,7 +80,7 @@
   }
 
   export async function addChain() {
-    await instance.request({
+    await ethereum.request({
       method: 'wallet_addEthereumChain',
       params: [
         {
