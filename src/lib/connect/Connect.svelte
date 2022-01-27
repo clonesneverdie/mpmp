@@ -33,9 +33,9 @@
 
   async function connectWallet() {
     $instance = await getInstance()
+    await addChain()
     $signer = await connect($instance)
     $myAddress = await getAddress()
-    await addChain()
     console.log($myAddress)
     const chainData = await getChainId()
     $chainId = chainData
