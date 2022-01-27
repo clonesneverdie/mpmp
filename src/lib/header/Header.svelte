@@ -1,10 +1,11 @@
 <script lang="ts">
   // import { nav } from '$app/stores'
-  import { navMenu, navSet } from '$stores/index'
+  import { navMenu, navSet, userInfoMenu } from '$stores/index'
   import { faBars } from '@fortawesome/free-solid-svg-icons'
   import Fa from 'svelte-fa'
   import Connect from '$lib/connect/Connect.svelte'
   import { chainId } from '$stores/chain'
+  import WalletModal from '$lib/connect/WalletModal.svelte'
 </script>
 
 <header>
@@ -23,6 +24,7 @@
     </div>
   </div>
 </header>
+<WalletModal />
 
 {#if $chainId !== 137}
   <div class="modal">please chainge {$chainId}</div>
@@ -49,20 +51,21 @@
 
   .menu-wrap {
     display: flex;
-    width: 200px;
-    justify-content: space-between;
+    width: 220px;
+    justify-content: flex-end;
   }
 
   .nav-icon {
     cursor: pointer;
     height: 100%;
     font-size: 1.7rem;
+    margin-left: 20px;
   }
 
   .wallet-btn {
     background-color: $base-color;
     color: $primary-color;
-    padding: 5px 20px 5px 20px;
+    /* padding: 5px 20px 5px 20px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +79,7 @@
   .wallet-btn:active {
     background-color: $base-color;
     color: $primary-color;
-    padding: 5px 20px 5px 20px;
+    /* padding: 5px 20px 5px 20px; */
     display: flex;
     justify-content: center;
     align-items: center;

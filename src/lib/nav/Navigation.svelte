@@ -73,7 +73,7 @@
       display: flex;
       background-color: $base-color;
       color: $primary-color;
-      padding: 5px 20px 5px 20px;
+      /* padding: 5px 20px 5px 20px; */
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
@@ -86,7 +86,7 @@
     .wallet-btn:active {
       background-color: $base-color;
       color: $primary-color;
-      padding: 5px 20px 5px 20px;
+      /* padding: 5px 20px 5px 20px; */
       display: flex;
       justify-content: center;
       align-items: center;

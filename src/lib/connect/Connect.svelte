@@ -1,18 +1,19 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { myAddress, isConnect, signer, instance, chainId } from '$stores/chain'
+  import { userInfoMenu } from '$stores/index'
+  import { myAddress, isConnect, signer, instance, chainId, myShortAddress } from '$stores/chain'
   import {
     getInstance,
     connect,
-    disconnect,
     connectState,
     accountsChanged,
     chainChanged,
     addChain,
     testTransaction,
     getAddress,
-    getChainId
-  } from '$lib/wallet/Wallet.svelte'
+    getChainId,
+    getShortAddress
+  } from '$lib/chain/Wallet.svelte'
   import PaxABI from '$abi/Pax.json'
 
   onMount(async () => {
@@ -37,9 +38,8 @@
     $instance = await getInstance()
     $signer = await connect($instance)
     $myAddress = await getAddress()
-    if (thisWidth > 768) {
-      await addChain()
-    }
+    $myShortAddress = await getShortAddress()
+    thisWidth > 768 && (await addChain())
     $chainId = await getChainId()
     $isConnect = true
     testNetwork()
@@ -51,7 +51,20 @@
 <svelte:window bind:innerWidth="{thisWidth}" />
 
 {#if $isConnect === true}
-  <div on:click="{disconnect}">{data}</div>
+  <div
+    class="btn"
+    on:click="{() => {
+      $userInfoMenu = !$userInfoMenu
+    }}"
+  >
+    {$myShortAddress}
+  </div>
 {:else}
-  <div on:click="{connectWallet}">Wallet Connect</div>
+  <div class="btn" on:click="{connectWallet}">Wallet Connect</div>
 {/if}
+
+<style lang="scss">
+  .btn {
+    padding: 5px 20px 5px 20px;
+  }
+</style>

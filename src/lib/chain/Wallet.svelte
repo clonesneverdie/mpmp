@@ -43,27 +43,32 @@
     return signer
   }
 
-  export async function disconnect() {
+  export async function disconnect(): Promise<void> {
     await web3Modal.clearCachedProvider()
     window.location.reload()
   }
 
-  export async function getAddress() {
+  export async function getAddress(): Promise<string> {
     return await signer.getAddress()
   }
 
-  export async function getChainId() {
+  export async function getShortAddress(): Promise<string> {
+    const myAddress = await signer.getAddress()
+    return `${myAddress.slice(0, 6)}...${myAddress.slice(-4)}`
+  }
+
+  export async function getChainId(): Promise<number> {
     const chainData = await provider.getNetwork()
     return chainData.chainId
   }
 
-  export function accountsChanged() {
+  export function accountsChanged(): void {
     instance.on('accountsChanged', () => {
       window.location.reload()
     })
   }
 
-  export function chainChanged() {
+  export function chainChanged(): void {
     instance.on('chainChanged', () => {
       window.location.reload()
     })
