@@ -82,7 +82,7 @@
   }
 
   export async function addChain() {
-    await ethereum.request({
+    await instance.request({
       method: 'wallet_addEthereumChain',
       params: [
         {

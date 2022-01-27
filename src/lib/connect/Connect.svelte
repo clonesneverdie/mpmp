@@ -37,22 +37,14 @@
     $myAddress = await getAddress()
     await addChain()
     console.log($myAddress)
-    $chainId = await getChainId()
-    console.log('chainid', $chainId)
-
+    const chainData = await getChainId()
+    $chainId = chainData
     $isConnect = true
     console.log('isconnect', $isConnect)
-
     testNetwork()
     accountsChanged()
     chainChanged()
   }
-
-  // function test() {
-  //   $instance.on('accountsChanged', () => {
-  //     window.location.reload()
-  //   })
-  // }
 </script>
 
 {#if $isConnect === true}
