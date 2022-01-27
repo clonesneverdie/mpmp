@@ -4,6 +4,7 @@
   import { faBars } from '@fortawesome/free-solid-svg-icons'
   import Fa from 'svelte-fa'
   import Connect from '$lib/connect/Connect.svelte'
+  import { chainId } from '$stores/chain'
 </script>
 
 <header>
@@ -22,6 +23,10 @@
     </div>
   </div>
 </header>
+
+{#if $chainId !== 137}
+  <div class="modal">please chainge</div>
+{/if}
 
 <style lang="scss">
   header {
@@ -80,6 +85,15 @@
     box-shadow: inset 2px 2px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     font-weight: bold;
+  }
+
+  .modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: antiquewhite;
   }
 
   @media screen and (max-width: 768px) {

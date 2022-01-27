@@ -11,12 +11,6 @@
   let providerOptions: any
   let signer: any
 
-  declare global {
-    interface Window {
-      WalletConnectProvider: any
-    }
-  }
-
   if (browser) {
     console.log(browser)
     ethereum = (window as any).ethereum
@@ -26,7 +20,7 @@
         package: WalletConnectProvider,
         options: {
           rpc: {
-            137: 'https://polygonscan.com/'
+            137: 'https://polygon-rpc.com/'
           },
           network: 'matic'
           // infuraId: infuraId
@@ -40,20 +34,41 @@
     })
   }
 
-  export async function getAddress() {
-    return await signer.getAddress()
+  export async function getInstance() {
+    instance = await web3Modal.connect()
+    return instance
   }
 
-  export async function connect() {
-    instance = await web3Modal.connect()
-    provider = new ethers.providers.Web3Provider(instance)
+  export async function connect(instance) {
+    provider = new ethers.providers.Web3Provider(instance, 'any')
     signer = provider.getSigner()
     return signer
   }
 
   export async function disconnect() {
     await web3Modal.clearCachedProvider()
-    provider = null
+    window.location.reload()
+  }
+
+  export async function getAddress() {
+    return await signer.getAddress()
+  }
+
+  export async function getChainId() {
+    const chainData = await provider.getNetwork()
+    return chainData.chainId
+  }
+
+  export function accountsChanged() {
+    instance.on('accountsChanged', () => {
+      window.location.reload()
+    })
+  }
+
+  export function chainChanged() {
+    instance.on('chainChanged', () => {
+      window.location.reload()
+    })
   }
 
   export async function connectState() {

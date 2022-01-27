@@ -1,7 +1,18 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-  import { myAddress, isConnect, signer } from '$stores/chain'
-  import { connect, disconnect, connectState, addChain, testTransaction, getAddress } from '$lib/wallet/Wallet.svelte'
+  import { onMount, afterUpdate, onDestroy } from 'svelte'
+  import { myAddress, isConnect, signer, instance, chainId } from '$stores/chain'
+  import {
+    getInstance,
+    connect,
+    disconnect,
+    connectState,
+    accountsChanged,
+    chainChanged,
+    addChain,
+    testTransaction,
+    getAddress,
+    getChainId
+  } from '$lib/wallet/Wallet.svelte'
   import PaxABI from '$abi/Pax.json'
 
   onMount(async () => {
@@ -21,13 +32,27 @@
   }
 
   async function connectWallet() {
-    $signer = await connect()
+    $instance = await getInstance()
+    $signer = await connect($instance)
     $myAddress = await getAddress()
     await addChain()
     console.log($myAddress)
+    $chainId = await getChainId()
+    console.log('chainid', $chainId)
+
     $isConnect = true
+    console.log('isconnect', $isConnect)
+
     testNetwork()
+    accountsChanged()
+    chainChanged()
   }
+
+  // function test() {
+  //   $instance.on('accountsChanged', () => {
+  //     window.location.reload()
+  //   })
+  // }
 </script>
 
 {#if $isConnect === true}
