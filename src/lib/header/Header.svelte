@@ -25,7 +25,7 @@
 </header>
 
 {#if $chainId !== 137}
-  <div class="modal">please chainge</div>
+  <div class="modal">please chainge {$chainId}</div>
 {/if}
 
 <style lang="scss">
