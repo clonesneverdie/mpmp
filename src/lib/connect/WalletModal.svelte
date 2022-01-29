@@ -21,10 +21,11 @@
 
 <style lang="scss">
   .modal-wrap {
-    position: absolute;
+    position: fixed;
     top: 80px;
     right: 62px;
     width: 250px;
+    z-index: 3;
   }
   .modal {
     display: flex;
@@ -35,7 +36,6 @@
     background-color: white;
     border: 1px solid lightgrey;
     border-radius: 20px;
-
     .item {
       background-color: lightpink;
       padding: 6px;

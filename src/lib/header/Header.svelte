@@ -1,16 +1,20 @@
 <script lang="ts">
-  // import { nav } from '$app/stores'
-  import { navMenu, navSet, userInfoMenu } from '$stores/index'
+  import { goto } from '$app/navigation'
+  import { navMenu, navSet } from '$stores/index'
   import { faBars } from '@fortawesome/free-solid-svg-icons'
   import Fa from 'svelte-fa'
   import Connect from '$lib/connect/Connect.svelte'
   import { chainId } from '$stores/chain'
   import WalletModal from '$lib/connect/WalletModal.svelte'
+
+  function goHome() {
+    goto('/')
+  }
 </script>
 
 <header>
   <div class="logo-wrap">
-    <div>MPMP</div>
+    <div on:click="{goHome}">MPMP</div>
   </div>
   <div class="menu-wrap">
     <div class="wallet-btn" on:click="{navSet}"><Connect /></div>
@@ -41,12 +45,15 @@
     top: 0;
     left: 0;
     right: 0;
+    filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.2));
+    z-index: 2;
   }
 
   .logo-wrap {
     font-size: 1.7rem;
     font-weight: bold;
     color: $base-color;
+    cursor: pointer;
   }
 
   .menu-wrap {

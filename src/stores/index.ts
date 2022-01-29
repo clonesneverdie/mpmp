@@ -1,7 +1,7 @@
-import { writable, Writable } from "svelte/store";
+import { writable } from "svelte/store";
 
-export const navMenu: Writable<boolean> = writable(false);
-export const userInfoMenu: Writable<boolean> = writable(false);
+export const navMenu = writable(false);
+export const userInfoMenu = writable(false);
 
 export const navSet = () => {
   navMenu.set(!navMenu)

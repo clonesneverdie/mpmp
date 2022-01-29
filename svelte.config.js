@@ -8,7 +8,7 @@ import path from 'path'
 const config = {
 	preprocess: preprocess({
 		scss: {
-      prependData: `@import "src/scss/variables.scss";`
+      prependData: `@import "src/scss/app.scss";`
     },
 	}),
 

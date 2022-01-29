@@ -4,7 +4,8 @@
 
 <style lang="scss">
   footer {
+    /* position: absolute; */
     background-color: $secondary-color;
-    height: 20vh;
+    height: 15vh;
   }
 </style>

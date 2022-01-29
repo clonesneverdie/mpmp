@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { goto } from '$app/navigation'
   import { navMenu, navSet } from '$stores/index'
   import { fly } from 'svelte/transition'
   import { faTimes } from '@fortawesome/free-solid-svg-icons'
@@ -7,8 +8,9 @@
 </script>
 
 {#if $navMenu}
-  <nav transition:fly="{{ x: 250, opacity: 1 }}">
+  <nav transition:fly="{{ x: 300, opacity: 1 }}">
     <div class="close">
+      <div></div>
       <div class="close-btn" on:click="{navSet}">
         <Fa icon="{faTimes}" color="#E3DAE7" />
       </div>
@@ -17,7 +19,15 @@
       <div class="wallet-btn"><Connect /></div>
     </div>
     <div class="menu">Clone V3</div>
-    <div class="menu">Clone Parts</div>
+    <div
+      class="menu"
+      on:click="{() => {
+        navSet()
+        goto('/parts')
+      }}"
+    >
+      Clone Parts
+    </div>
     <div class="menu">Swap</div>
   </nav>
   <div class="back" on:click="{navSet}"></div>
@@ -32,7 +42,7 @@
     padding: 10px;
     /* overflow-y: auto; */
     width: 15rem;
-    z-index: 2;
+    z-index: 6;
     background-color: $primary-color;
   }
   .back {
@@ -43,7 +53,7 @@
     opacity: 0.4;
     width: 100vw;
     height: 100vh;
-    z-index: 1;
+    z-index: 5;
   }
   .menu {
     display: flex;
@@ -57,7 +67,7 @@
   }
   .close {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
   }
   .close-btn {
     font-size: 1.7rem;
@@ -103,7 +113,7 @@
 
     .close {
       display: flex;
-      justify-content: end;
+      justify-content: space-between;
     }
     .close-btn {
       font-size: 1.7rem;
