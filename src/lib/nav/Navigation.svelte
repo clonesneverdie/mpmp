@@ -28,7 +28,15 @@
     >
       Clone Parts
     </div>
-    <div class="menu">Swap</div>
+    <div
+      class="menu"
+      on:click="{() => {
+        navSet()
+        goto('/token')
+      }}"
+    >
+      MP Token
+    </div>
   </nav>
   <div class="back" on:click="{navSet}"></div>
 {/if}

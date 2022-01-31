@@ -1,9 +1,4 @@
-<script lang="ts">
-</script>
-
-<div class="wrap">
-  
-</div>
+<div class="wrap">swap</div>
 
 <style lang="scss">
   .wrap {
@@ -11,5 +6,6 @@
     background-color: $base-color;
     margin: 0px auto;
     padding: 80px 15px 10px 15px;
+    height: 100vh;
   }
 </style>
