@@ -1,23 +1,19 @@
 <script lang="ts">
   import { page } from '$app/stores'
   import { onMount } from 'svelte'
-
+  import ItemDetail from '$lib/item-detail/ItemDetail.svelte'
   const tokenId: string = $page.params.id
 </script>
 
 <div class="wrap">
-  <div class="test">{tokenId}</div>
+  <ItemDetail tokenId="{tokenId}" />
 </div>
 
 <style lang="scss">
   .wrap {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    justify-content: space-between;
-  }
-  .test {
-    width: 100%;
-    margin-top: 110px;
+    max-width: 1280px;
+    margin: 0px auto;
+    box-sizing: border-box;
+    padding: 80px 15px 10px 15px;
   }
 </style>
