@@ -17,10 +17,10 @@
 <svelte:head>
   <title>MPMP | Mix-Pax Market Place</title>
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@digitalocean" />
-  <meta name="twitter:title" content="Sammy the Shark" />
-  <meta name="twitter:description" content="Senior Selachimorpha at DigitalOcean" />
-  <meta name="twitter:image" content="/assets/{imageName}.png" />
+  <meta name="twitter:site" content="@elixirevo" />
+  <meta name="twitter:title" content="MPMP" />
+  <meta name="twitter:description" content="MPMP at DigitalOcean" />
+  <meta name="twitter:image" content="/assets/main-banner.png" />
 </svelte:head>
 
 <div class="wrap">
