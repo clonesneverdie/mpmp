@@ -10,6 +10,8 @@
 <script lang="ts">
   import Banner from '$lib/banner/Banner.svelte'
   import ItemList from '$lib/item/ItemList.svelte'
+
+  const imageName = 'main-banner'
 </script>
 
 <svelte:head>
@@ -18,7 +20,7 @@
   <meta name="twitter:site" content="@digitalocean" />
   <meta name="twitter:title" content="Sammy the Shark" />
   <meta name="twitter:description" content="Senior Selachimorpha at DigitalOcean" />
-  <meta name="twitter:image" content="https://html.sammy-codes.com/images/large-profile.jpg" />
+  <meta name="twitter:image" content="/assets/{imageName}.png" />
 </svelte:head>
 
 <div class="wrap">
