@@ -5,12 +5,12 @@
 <div class="market-wrap">
   <div class="market">
     <div class="element-wrap">
-      <div class="market-title-wrap">
+      <!-- <div class="market-title-wrap">
         <div class="market-title">Clone V3 Parts</div>
-      </div>
+      </div> -->
       <div class="market-btn-wrap">
         <div class="select-box">d</div>
-        <div class="btns">d</div>
+        <!-- <div class="btns">d</div> -->
       </div>
     </div>
     <div class="list">
@@ -75,7 +75,7 @@
 <style lang="scss">
   .market-wrap {
     display: flex;
-    margin-top: 124px;
+    margin-top: 119px;
     padding: 15px;
     flex: 1;
   }
@@ -87,11 +87,11 @@
     /* background-color: aquamarine; */
   }
 
-  .market-title {
+  /* .market-title {
     font-weight: bold;
     font-size: 1.8rem;
     color: $primary-color;
-  }
+  } */
 
   .list {
     display: flex;
@@ -110,16 +110,17 @@
     flex: 0 0 200px;
   }
 
-  .market-title-wrap {
+  /* .market-title-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
-  }
+  } */
 
   .element-wrap {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    padding-bottom: 15px;
   }
 
   .market-btn-wrap {
@@ -128,14 +129,14 @@
     justify-content: flex-end;
   }
 
-  .btns {
+  /* .btns {
     background-color: $secondary-color;
     padding: 10px;
     border-radius: 10px;
     flex: 0 0 80px;
     box-sizing: border-box;
     margin-left: 10px;
-  }
+  } */
 
   .select-box {
     padding: 10px;
@@ -161,7 +162,7 @@
     .market-btn-wrap {
       display: flex;
       width: 100%;
-      justify-content: space-between;
+      justify-content: flex-end;
     }
   }
 </style>

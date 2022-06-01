@@ -112,7 +112,7 @@
     font-weight: bold;
     box-sizing: border-box;
     border: 1px solid lightgrey;
-    background-color: $point-color;
+    background-color: $secondary-color;
     border-radius: 20px;
   }
 
@@ -145,10 +145,10 @@
     flex-direction: column;
     font-size: 0.9rem;
     font-weight: bold;
-    color: black;
+    color: $base-color;
     box-sizing: border-box;
     border: 1px solid lightgrey;
-    background-color: $point-color;
+    background-color: $primary-color;
     border-radius: 10px;
     margin-bottom: 30px;
 
@@ -188,11 +188,11 @@
     .price {
       padding: 30px 30px 0px 30px;
       font-size: 2rem;
-      color: $primary-color;
+      color: $base-color;
     }
     .buy-btn {
       margin: 30px;
-      background-color: $primary-color;
+      background-color: $point-color;
       display: flex;
       justify-content: center;
       border-radius: 10px;
@@ -287,7 +287,7 @@
     font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 10px;
-    color: $primary-color;
+    color: $point-color;
   }
 
   @media screen and (max-width: 768px) {

@@ -26,7 +26,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $point-color;
+    background-color: $secondary-color;
+    color: $base-color;
     border: 1px solid lightgrey;
     border-radius: 10px;
     padding: 10px;
@@ -34,6 +35,7 @@
   }
 
   .item-box:hover {
+    background-color: $point-color;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
@@ -56,11 +58,23 @@
       display: flex;
       justify-content: start;
       margin-bottom: 10px;
+      font-size: 0.9rem;
     }
     .item-price {
       width: 100%;
       display: flex;
       justify-content: space-between;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .item-box:hover {
+      background-color: $secondary-color;
+      box-shadow: none;
+    }
+    .item-box:active {
+      background-color: $point-color;
+      box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
 </style>

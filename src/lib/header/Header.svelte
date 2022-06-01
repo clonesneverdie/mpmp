@@ -14,7 +14,7 @@
 
 <header>
   <div class="logo-wrap">
-    <div on:click="{goHome}">MPMP</div>
+    <img class="logo" on:click="{goHome}" src="/assets/logo.png" alt="logo" />
   </div>
   <div class="menu-wrap">
     <div class="wallet-btn" on:click="{navSet}"><Connect /></div>
@@ -24,7 +24,7 @@
         $navMenu = !$navMenu
       }}"
     >
-      <Fa icon="{faBars}" color="#E3DAE7" />
+      <Fa icon="{faBars}" color="#D90000" />
     </div>
   </div>
 </header>
@@ -38,8 +38,9 @@
   header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: $primary-color;
-    padding: 20px;
+    padding: 10px 20px 10px 20px;
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -52,6 +53,7 @@
   .logo-wrap {
     font-size: 1.7rem;
     font-weight: bold;
+    width: 110px;
     color: $base-color;
     cursor: pointer;
   }
@@ -70,8 +72,8 @@
   }
 
   .wallet-btn {
-    background-color: $base-color;
-    color: $primary-color;
+    background-color: $point-color;
+    color: $base-color;
     /* padding: 5px 20px 5px 20px; */
     display: flex;
     justify-content: center;
@@ -84,8 +86,8 @@
   }
 
   .wallet-btn:active {
-    background-color: $base-color;
-    color: $primary-color;
+    background-color: $point-color;
+    color: $base-color;
     /* padding: 5px 20px 5px 20px; */
     display: flex;
     justify-content: center;
@@ -104,6 +106,10 @@
     width: 100px;
     height: 100px;
     background-color: antiquewhite;
+  }
+
+  .logo {
+    width: 100%;
   }
 
   @media screen and (max-width: 768px) {

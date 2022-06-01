@@ -12,7 +12,7 @@
     <div class="close">
       <div></div>
       <div class="close-btn" on:click="{navSet}">
-        <Fa icon="{faTimes}" color="#E3DAE7" />
+        <Fa icon="{faTimes}" color="#D90000" />
       </div>
     </div>
     <div class="btn-wrap">

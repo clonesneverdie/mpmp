@@ -51,7 +51,7 @@
     font-weight: bold;
     font-size: 1.8rem;
     /* margin-bottom: 10px; */
-    color: $primary-color;
+    color: $point-color;
   }
   .list {
     display: flex;
@@ -76,7 +76,7 @@
   .more-list-btn {
     padding: 5px;
     font-weight: bold;
-    color: $primary-color;
+    color: $point-color;
     cursor: pointer;
   }
 

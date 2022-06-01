@@ -13,8 +13,7 @@
   <slot />
 </main>
 
-<Footer />
-
+<!-- <Footer /> -->
 <style lang="scss">
   main {
     background-color: $base-color;
